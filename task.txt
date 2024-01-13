@@ -1,0 +1,15 @@
+Unattended Programming Test: The Test Signer
+
+Task:
+The Test signer is a service that accepts a set of answers and questions and signs that the user has finished the " test " at this point in time. The signatures are stored and can later be verified by a different service.
+
+Requirements:
+  - Written in Go.
+  - Persists data between start-ups and can have multiple instances.
+  - Exposes an API with the following functionality:
+    - Sign answers:
+      - Accepts: a user jwt, questions, answers
+      - Returns: test-signature, or an error.
+    - Verify signature:
+      - Accepts: a user and a signature
+      - Returns: OK if signature belongs to user, answers and timestamp of the signature.
